@@ -1,6 +1,6 @@
 services:
   open-design:
-    image: ghcr.io/nexu-io/od:v0.17.0
+    image: ghcr.io/nexu-io/od:latest
     container_name: open-design
     restart: unless-stopped
 
