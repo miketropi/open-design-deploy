@@ -1,0 +1,21 @@
+services:
+  open-design:
+    image: ghcr.io/nexu-io/od:latest
+    container_name: open-design
+    restart: unless-stopped
+
+    environment:
+      NODE_ENV: production
+      OD_BIND_HOST: 0.0.0.0
+      OD_PORT: 7456
+      OD_API_TOKEN: ${OD_API_TOKEN}
+      OD_ALLOWED_ORIGINS: ${OD_ALLOWED_ORIGINS}
+
+    ports:
+      - "7456:7456"
+
+    volumes:
+      - open_design_data:/app/.od
+
+volumes:
+  open_design_data:
